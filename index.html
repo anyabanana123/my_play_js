@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<style type="text/css">
+		.door{
+			position: absolute;
+		}
+	</style>
+</head>
+<body style="background-image: url(monster.jpg); background-size: 100%">
+<div class="start" style="height:700px; background-image: url(двери.png); background-size:100% 100%">
+	<h1 style="padding-top:10px;color:orange; font-family: fantasy; text-align: center;">Welcome to the World the Doors!</h1>
+	<p style="color:orange; font-family: fantasy; text-align: center;">Choice your door and click</p>
+	<img src="door1.png" class="door" style="margin-left: 14%; margin-top: 8%;height: 100px;width: 100px;">
+	<img src="door2.png" class="door" style="margin-left: 34%; margin-top: 8%;height: 100px;width: 100px;">
+	<img src="door3.png" class="door" style="margin-left: 56%; margin-top: 8%;height: 100px;width: 100px;">
+	<img src="door4.png" class="door" style="margin-left: 78%; margin-top: 8%;height: 100px;width: 100px;">
+	<img src="door5.png" class="door" style="margin-left: 14%; margin-top: 29%;height: 100px;width: 100px;">
+	<img src="door6.png" class="door" style="margin-left: 36%; margin-top: 29%;height: 100px;width: 100px;">
+	<img src="door7.png" class="door" style="margin-left: 56%; margin-top: 29%;height: 100px;width: 100px;">
+	<img src="door8.png" class="door" style="margin-left: 79%; margin-top: 27%;height: 120px;width: 120px;">
+</div>
+
+<div class="homer" style="background-image: url(bg2.jpg); height: 700px; background-size: 100% 100%; display: none">
+
+		<h1 class="text-light">Найди 3 отличий!</h1>
+		<h1  class="text-light point1">0</h1>
+		<button class="btn">Выйти из игры</button>
+
+		<img src="apple.png" style="height: 50px; width: 70px; position: absolute; margin-left:300px; margin-top: 50px" class="as1">
+		<img src="flower.png" style="height: 30px; width: 30px; position: absolute; margin-left:1066px; margin-top: 442px" class="as2">
+		<img src="кольцо.png"  style="height: 30px; width: 30px; position: absolute; margin-left:1130px; margin-top: 275px" class="as3">
+</div>
+
+<div class="monster" style="display: none">
+	<h1>Очки: <span class="ochki">0</span></h1>
+	<h1>Рэндалл: <span class="snake">0</span></h1>
+	<button>Выйти из игры</button>
+		
+</div>
+<div class="narnia" style="background-image: url(narnia.jpg); height: 670px; background-size: 100% 100%; display: none">
+	<div class="container quest1" style="">
+		<div>
+			<h2>Как называется страна, в которую попали дети?</h2>
+		</div>
+		<div class="border py-3 px-3 otvet1_1  bg-info">Царство Белой Колдуньи</div>
+		<div class="border py-3 px-3 otvet1_2  bg-info">Нарния</div>
+		<div class="border py-3 px-3 otvet1_3  bg-info">Фавния</div>
+	</div> 
+
+	<div class="container quest2" style="display: none;">
+		<div>
+			<h2>Как зовут фавна?</h2>
+		</div>
+		<div class="border py-3 px-3 otvet2_1 bg-info">мистер Тумнус</div>
+		<div class="border py-3 px-3 otvet2_2  bg-info">мистер Льюис</div>
+		<div class="border py-3 px-3 otvet2_3  bg-info">мистер Думнус</div>
+	</div>
+
+	<div class="container quest3" style="display: none;">
+		<div>
+			<h2>Чем Белая Колдунья угостила Эдмунда?</h2>
+		</div>
+		<div class="border py-3 px-3 otvet3_1  bg-info">леденцом</div>
+		<div class="border py-3 px-3 otvet3_2 bg-info">рахат-лукумом</div>
+		<div class="border py-3 px-3 otvet3_3  bg-info">мороженым</div>
+	</div>
+
+	<div class="container quest4" style="display: none;">
+		<div>
+			<h2>Какими подарками одарил Санта Сьюзен?</h2>
+		</div>
+		<div class="border py-3 px-3 otvet4_1 bg-info">целебный напиток и кинжал</div>
+		<div class="border py-3 px-3 otvet4_2 bg-info">рог и лук со стреламии</div>
+		<div class="border py-3 px-3 otvet4_3 bg-info">кинжал и рог</div>
+	</div> 
+
+	<div class="container quest5" style="display: none;">
+		<div>
+			<h2>Из какой части эта картина?</h2>
+			<img src="йцукен.jpg">
+		</div>
+		<div class="border py-3 px-3 otvet5_1 bg-info">
+			3
+		</div>
+		<div class="border py-3 px-3 otvet5_2 bg-info">
+			1
+		</div>
+		<div class="border py-3 px-3 otvet5_3 bg-info">
+			2
+		</div>
+	</div> 
+
+</div>
+	<script type="text/javascript">
+		let door = document.querySelectorAll(".door");
+		door[0].onclick=function(){
+			alert("The Simcons!")
+			let score=0;
+			document.querySelector(".start").style.display="none"
+			document.querySelector(".homer").style.display="block"
+			document.querySelector(".as1").onclick=function(){
+				score=score+1
+				document.querySelector('.point1').innerHTML=score
+				document.querySelector('.as1').style.display="none"
+			}
+			document.querySelector(".as2").onclick=function(){
+				score=score+1
+				document.querySelector('.point1').innerHTML=score
+				document.querySelector('.as2').style.display="none"
+			}
+			document.querySelector(".as3").onclick=function(){
+				score=score+1
+				document.querySelector('.point1').innerHTML=score
+				document.querySelector('.as3').style.display="none"
+			}
+			if(score==3){
+				alert("Хорошая работа!")
+			}
+			document.querySelector(".btn").onclick=function(){
+				score=0;
+				document.querySelector(".start").style.display="block"
+				document.querySelector(".homer").style.display="none"
+			}
+		}
+
+		door[1].onclick=function(){
+			alert("The Monsters, Inc!")
+			document.querySelector(".start").style.display="none"
+			document.querySelector(".monster").style.display="block"
+			let func = function(arg) {//создание функции
+				let rand = Math.random()*arg //случайное число до 5
+				let round = Math.round(rand) //округлить число 
+				return round;
+			}
+			let ochki_ind=document.querySelector(".ochki");
+			let juki_ind=document.querySelector(".snake");
+			let ochki=0;
+			let juki=0;
+			let create= function(){
+			juki=juki+1;
+			juki_ind.innerHTML=juki
+			
+		}
+
+			let app= function(){
+				let newImg = document.createElement('img');
+				document.body.appendChild(newImg);
+				newImg.src="snack.png";
+				newImg.style.height="67px";
+				newImg.style.width="88px";
+				newImg.style.position="absolute";
+				newImg.style.marginLeft=func(1000)+"px";
+				newImg.style.marginTop=func(500)+"px";
+				newImg.onclick = function(){
+					newImg.style.display="none";
+					ochki=ochki+10;
+					ochki_ind.innerHTML=ochki
+					juki=juki-1;
+					juki_ind.innerHTML=juki
+				}
+			}
+
+			let kot=setInterval(create,1000);
+			let kott=setInterval(app,1000);
+
+			let proverka = function() {//создание функции
+				if(ochki<100){
+					alert("you lose")
+					clearInterval(kot);
+					clearInterval(kott);
+				}
+				else if(ochki>=100){
+					alert("you win")
+				}
+			}
+			setTimeout(proverka,15000) //таймер
+			document.querySelector(".btn").onclick=function(){
+				ochki=0;
+				document.querySelector(".start").style.display="block"
+				document.querySelector(".homer").style.display="none"
+			}
+		}
+		door[2].onclick=function(){
+			alert("Дверь закрыта")
+		}
+		door[3].onclick=function(){
+			alert("The Chronicles of Narnia!")
+			score=0;
+			document.querySelector(".start").style.display="none"
+			document.querySelector(".narnia").style.display="block"
+			document.querySelector(".otvet1_2").onclick = function(){
+				alert("Cool!")
+				score=score+1
+				document.querySelector(".quest1").style.display = "none"
+				document.querySelector(".quest2").style.display = "block"
+			}
+
+			document.querySelector(".otvet1_1").onclick = function(){
+				alert("Not cool(")
+			}
+			document.querySelector(".otvet1_3").onclick = function(){
+				alert("Not cool(")
+			}
+
+			document.querySelector(".otvet2_1").onclick = function(){
+				alert("Вау да ты в ударе")
+				score=score+1
+				document.querySelector(".quest2").style.display = "none"
+				document.querySelector(".quest3").style.display = "block"
+			}
+
+			document.querySelector(".otvet2_2").onclick = function(){
+				alert("Не знаешб!???")
+			}
+			document.querySelector(".otvet2_3").onclick = function(){
+				alert("эхххх")
+			}
+
+			document.querySelector(".otvet3_1").onclick = function(){
+				alert("seriously?")
+			}
+			document.querySelector(".otvet3_2").onclick = function(){
+				alert("йессс!!!")
+				score=score+1
+				document.querySelector(".quest3").style.display = "none"
+				document.querySelector(".quest4").style.display = "block"
+			}
+			document.querySelector(".otvet3_3").onclick = function(){
+				alert("Ну....попробуй еще раз")
+			}
+
+			document.querySelector(".otvet4_1").onclick = function(){
+				alert("Почти")
+			}
+			document.querySelector(".otvet4_2").onclick = function(){
+				alert("ШШик")
+				score=score+1
+				document.querySelector(".quest4").style.display = "none"
+				document.querySelector(".quest5").style.display = "block"
+			}
+			document.querySelector(".otvet4_3").onclick = function(){
+				alert("ну бывает")
+			}
+
+			document.querySelector(".otvet5_1").onclick = function(){
+				alert("одьэ")
+			}
+			document.querySelector(".otvet5_2").onclick = function(){
+				alert("Правильно! индинда")
+			}
+			document.querySelector(".otvet5_3").onclick = function(){
+				alert("Yeah")
+				score=score+1
+				document.querySelector(".quest5").style.display = "none"
+				alert("Ты набрал "+score+" очков")
+				document.querySelector(".narnia").style.display="none"
+				document.querySelector(".start").style.display="block"
+			}
+			
+
+		}
+		door[4].onclick=function(){
+			alert("wait")
+		}
+		door[5].onclick=function(){
+			alert("wait")
+		}
+		door[6].onclick=function(){
+			alert("wait")
+		}
+		door[7].onclick=function(){
+			alert("wait")
+		}
+	</script>
+</body>
+</html>
